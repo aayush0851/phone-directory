@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 //connecting to db
-mongoose.connect('mongo://localhost:27017/directory');
+mongoose.connect('mongodb://localhost:27017/directory');
 mongoose.Promise = global.Promise;
 
 //introducing middleware
