@@ -8,9 +8,7 @@ const contactSchema = new Schema({
         require: [true, 'This field is required']
     },
     mobileNumber: {
-        type: Number,
-        min: 6000000000,
-        max: 9999999999,
+        type: String,
         require: [true, 'This field is required']
     }
 });

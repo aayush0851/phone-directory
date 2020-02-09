@@ -44,10 +44,10 @@ router.post('/newContact', function(req,res,next){
 
 //put api update name or number
 router.put('/update/:id', function(req, res, next){
-    Contact.findByIdAndUpdate({mobileNumber: req.params.id}, req.body).then(contact =>{
+    Contact.findByIdAndUpdate({_id: req.params.id}, req.body).then(contact =>{
         Contact.findOne(req.body).then(contact =>{
         return res.status(201).json({
-            message: conatct
+            message: contact
         }).catch(err =>{
             return res.status(500).json({
                 error: err
@@ -63,7 +63,7 @@ router.put('/update/:id', function(req, res, next){
 
 //delete api 
 router.delete('/delete/:id', function(req,res,next){
-    Contact.findByIdAndRemove({mobileNumber: req.params.id}).then(contact =>{
+    Contact.findByIdAndRemove({_id: req.params.id}).then(contact =>{
         return res.status(201).json({
             message: contact
         }).catch(err =>{
